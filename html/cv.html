@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="/css/cv.css">
 </head>
 <body>
 
+<div class="container">
+    <h1>Déposer ou Modifier Votre CV</h1>
+
+    <!-- Section pour rédiger le CV -->
+    <form id="cvForm">
+        <h2>Rédiger votre CV</h2>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="experience">Expérience :</label>
+        <textarea id="experience" name="experience" rows="4" placeholder="Décrivez vos expériences..." required></textarea>
+
+        <label for="skills">Compétences :</label>
+        <textarea id="skills" name="skills" rows="4" placeholder="Listez vos compétences..." required></textarea>
+
+        <button type="submit">Soumettre le CV</button>
+    </form>
+
+    <hr>
+
+    <!-- Section pour déposer un fichier CV -->
+    <form id="uploadForm" enctype="multipart/form-data">
+        <h2>Déposer un fichier CV</h2>
+        <label for="cvFile">Sélectionner votre fichier CV :</label>
+        <input type="file" id="cvFile" name="cvFile" accept=".pdf,.doc,.docx" required>
+        <button type="button" class="btn-upload" onclick="uploadCV()">Télécharger le CV</button>
+    </form>
+
+    <hr>
+
+    <!-- Section pour modifier le CV (ce bouton pourrait être lié à un autre formulaire ou action de mise à jour) -->
+    <button class="btn-modifier" onclick="modifierCV()">Modifier le CV</button>
+</div>
 </body>
 </html>
